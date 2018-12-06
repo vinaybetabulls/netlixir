@@ -1,0 +1,90 @@
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Edit Emploee</strong>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Firstname</th>
+                                    <th scope="col">Lastname</th>
+                                    <th scope="col">Username</th>
+                                    <th>Edit Employee</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="emp in Employees">
+                                    <th scope="row">{{$index}}</th>
+                                    <td>{{emp.firstname}}</td>
+                                    <td>{{emp.lastname}}</td>
+                                    <td>{{emp.username}}</td>
+                                    <td><a data-toggle="modal" data-target="#mediumModal" ng-click="getEmpById(emp._id)"><i class="fa fa-edit"></i> <span
+                                                class="text-muted">Edit</span></a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mediumModalLabel">Edit Employee {{empId}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" id="firstname" name="firstname" placeholder="Firstname" class="form-control" ng-model="empDetails.firstname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" id="lastname" name="username" placeholder="Lastname" class="form-control" ng-model="empDetails.lastname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" id="username" name="username" placeholder="Username" class="form-control" ng-model="empDetails.username" readonly>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                        <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+                      </div>
+                    </div> -->
+                    <!-- <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                            <input type="password" id="password" name="password" placeholder="Password" class="form-control" ng-model="empDetails.password">
+                        </div>
+                    </div> -->
+                    <div class="form-actions form-group"><button type="button" class="btn btn-success btn-sm" ng-click="updateEmployee()">Update</button></div>
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+            </div> -->
+        </div>
+    </div>
+</div>

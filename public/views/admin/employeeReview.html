@@ -1,0 +1,75 @@
+<div class="col-lg-8">
+    <div class="card">
+      <div class="card-header">Employee Review Form</div>
+      <div class="card-body card-block">
+          <div class="row form-group">
+              <div class="col col-md-3"><label for="select" class=" form-control-label">Select Employee</label></div>
+              <div class="col-12 col-md-9">
+                
+                  <select data-ng-options="o.empName for o in employeeNames" data-ng-model="selectedOption"></select>
+
+              </div>
+            </div>
+            <div ng-show="selectedOption!=undefined">
+
+        <div class="row form-group">
+            <div class="col col-md-3"><label class=" form-control-label">Communication</label></div>
+            <div class="col col-md-9">
+              <div class="form-check-inline form-check">
+                <label for="inline-radio1" class="form-check-label ">
+                  <input type="radio" id="inline-radio1" name="inline-radios" value="bad" class="form-check-input" ng-model="review.communication">Bad
+                </label>
+                <label for="inline-radio2" class="form-check-label ">
+                  <input type="radio" id="inline-radio2" name="inline-radios" value="avg" class="form-check-input" ng-model="review.communication">Average
+                </label>
+                <label for="inline-radio3" class="form-check-label ">
+                  <input type="radio" id="inline-radio3" name="inline-radios" value="good" class="form-check-input" ng-model="review.communication">Good
+                </label>
+              </div>
+            </div>
+          </div>
+        <div class="row form-group">
+            <div class="col col-md-3"><label class=" form-control-label">Skills</label></div>
+            <div class="col col-md-9">
+              <div class="form-check-inline form-check">
+                <label for="inline-radio1" class="form-check-label ">
+                  <input type="radio" id="inline-skills1" name="skills" value="bad" class="form-check-input" ng-model="review.skills">Bad
+                </label>
+                <label for="inline-radio2" class="form-check-label ">
+                  <input type="radio" id="inline-skills2" name="skills" value="avg" class="form-check-input" ng-model="review.skills">Average
+                </label>
+                <label for="inline-radio3" class="form-check-label ">
+                  <input type="radio" id="inline-skills" name="skills" value="good" class="form-check-input" ng-model="review.skills">Good
+                </label>
+              </div>
+            </div>
+          </div>
+        <div class="row form-group">
+            <div class="col col-md-3"><label class=" form-control-label">Overall Rating</label></div>
+            <div class="col col-md-9">
+              <div class="form-check-inline form-check">
+                <label for="inline-radio1" class="form-check-label ">
+                  <input type="radio" id="inline-rating1" name="overallRating" value="bad" class="form-check-input" ng-model="review.overallRating">Bad
+                </label>
+                <label for="inline-radio2" class="form-check-label ">
+                  <input type="radio" id="inline-rating2" name="overallRating" value="avg" class="form-check-input" ng-model="review.overallRating">Average
+                </label>
+                <label for="inline-radio3" class="form-check-label ">
+                  <input type="radio" id="inline-ratings" name="overallRating" value="good" class="form-check-input" ng-model="review.overallRating">Good
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Comment</label></div>
+            <div class="col-12 col-md-9">
+                <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Content..." class="form-control" ng-model="review.comments"></textarea>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+    <div class="form-actions form-group"><button type="button" class="btn btn-success btn-sm" ng-click="saveReview()">Submit</button></div>
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Delete Employee</strong>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Firstname</th>
+                                    <th scope="col">Lastname</th>
+                                    <th scope="col">Username</th>
+                                    <th>Edit Employee</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="emp in Employees">
+                                    <th scope="row">{{$index}}</th>
+                                    <td>{{emp.firstname}}</td>
+                                    <td>{{emp.lastname}}</td>
+                                    <td>{{emp.username}}</td>
+                                    <td><a data-toggle="modal" data-target="#staticModal" ng-click="getEmpById(emp._id)"><i class="fa fa-trash-o"></i> <span
+                                                class="text-muted">Delete</span></a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticModalLabel">Delete Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                   Are sure you want to delete employee {{empDetails.username}}.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-click="deleteEmployee(empDetails._id)">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>

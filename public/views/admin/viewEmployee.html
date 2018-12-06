@@ -1,0 +1,35 @@
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">View Employee List</strong>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Firstname</th>
+                                    <th scope="col">Lastname</th>
+                                    <th scope="col">Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="emp in Employees">
+                                    <th scope="row">{{$index}}</th>
+                                    <td>{{emp.firstname}}</td>
+                                    <td>{{emp.lastname}}</td>
+                                    <td>{{emp.username}}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

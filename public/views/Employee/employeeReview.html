@@ -1,0 +1,38 @@
+<div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">View Employee Review</strong>
+                        </div>
+                        <div class="card-body">
+                            <h4 ng-if="emp==null" class="text-center">Review not available</h4>
+                            <table class="table" ng-if="emp!=null">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Employee Name</th>
+                                        <th scope="col">Communication</th>
+                                        <th scope="col">Skills</th>
+                                        <th scope="col">Overal Rating</th>
+                                        <th scope="col">Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>{{emp.empName}}</td>
+                                        <td>{{emp.communication}}</td>
+                                        <td>{{emp.skills}}</td>
+                                        <td>{{emp.overallRating}}</td>
+                                        <td>{{emp.comments}}</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
